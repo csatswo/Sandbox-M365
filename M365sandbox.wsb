@@ -1,0 +1,12 @@
+<Configuration>
+<MappedFolders>
+   <MappedFolder>
+     <HostFolder>%PathToFolder%\M365Sandbox</HostFolder>
+     <SandboxFolder>C:\M365Sandbox</SandboxFolder> 
+     <ReadOnly>true</ReadOnly>
+   </MappedFolder>
+</MappedFolders>
+<LogonCommand>
+   <Command>C:\M365Sandbox\Prep.cmd</Command>
+</LogonCommand>
+</Configuration>
