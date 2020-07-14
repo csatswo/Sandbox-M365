@@ -9,5 +9,5 @@ Sandbox currently requires an abosulte path for the Host Folder.  The `M365sandb
 For example:
 ```
    <MappedFolder>
-     <HostFolder>C:\Users\csatswo\Documents\Documents\M365Sandbox</HostFolder>
+     <HostFolder>C:\Users\csatswo\Documents\M365Sandbox</HostFolder>
 ```
