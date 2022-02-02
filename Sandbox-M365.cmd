@@ -30,8 +30,7 @@ powershell.exe "Install-Module ExchangeOnlineManagement"
 powershell.exe "Install-Module Microsoft.Online.SharePoint.PowerShell"
 
 REM Create PowerShell profile
-REM > C:\Windows\System32\WindowsPowerShell\v1.0\profile.ps1 (
-> C:\Users\WDAGUtilityAccount\Desktop\profile.ps1 (
+> C:\Windows\System32\WindowsPowerShell\v1.0\profile.ps1 (
     ECHO Function func_recent {
     ECHO     [CmdletBinding^(^)] 
     ECHO     [Alias^('recent'^)]
