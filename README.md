@@ -1,5 +1,5 @@
 # Sandbox-M365
-### Windows Sandbox legacy configuration files for a disposable M365 management computer
+### Windows Sandbox configuration files for a disposable M365 management computer
 ##### Updated for 21H2
 
 Sandbox currently requires an abosulte path for the Host Folder.  The `Sandbox-M365.wsb` file will need to updated to reflect the correct path.
