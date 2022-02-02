@@ -1,0 +1,12 @@
+<Configuration>
+<MappedFolders>
+   <MappedFolder>
+     <HostFolder>C:\GitHub\csatswo\Sandbox-M365\v1909</HostFolder> 
+     <ReadOnly>true</ReadOnly>
+   </MappedFolder>
+</MappedFolders>
+<LogonCommand>
+   <Command>C:\Users\WDAGUtilityAccount\Desktop\v1909\Sandbox-M365v1909.cmd</Command>
+</LogonCommand>
+</Configuration>
+ 
