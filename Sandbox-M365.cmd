@@ -23,11 +23,16 @@ powershell.exe "Set-ExecutionPolicy -ExecutionPolicy Unrestricted"
 powershell.exe "Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force"
 powershell.exe "Set-PSRepository -Name PSGallery -InstallationPolicy Trusted"
 powershell.exe "Update-Module"
-powershell.exe "Install-Module AzureADPreview"
-powershell.exe "Install-Module MSOnline"
-powershell.exe "Install-Module MicrosoftTeams"
-powershell.exe "Install-Module ExchangeOnlineManagement"
-powershell.exe "Install-Module Microsoft.Online.SharePoint.PowerShell"
+ECHO Installing Azure AD module...
+powershell.exe "Install-Module -Repository PSGallery -Name AzureADPreview"
+ECHO Installing MSOnline module...
+powershell.exe "Install-Module -Repository PSGallery -Name MSOnline"
+ECHO Installing Teams module...
+powershell.exe "Install-Module -Repository PSGallery -Name MicrosoftTeams"
+ECHO Installing Exchange Online module...
+powershell.exe "Install-Module -Repository PSGallery -Name ExchangeOnlineManagement"
+ECHO Installing SharePoint Online module...
+powershell.exe "Install-Module -Repository PSGallery -Name Microsoft.Online.SharePoint.PowerShell"
 
 REM Create PowerShell profile
 > C:\Windows\System32\WindowsPowerShell\v1.0\profile.ps1 (
