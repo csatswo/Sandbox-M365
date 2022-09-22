@@ -35,7 +35,8 @@ ECHO Installing SharePoint Online module...
 powershell.exe "Install-Module -Repository PSGallery -Name Microsoft.Online.SharePoint.PowerShell"
 
 REM Create PowerShell profile
-> C:\Windows\System32\WindowsPowerShell\v1.0\profile.ps1 (
+(
+    ECHO:
     ECHO Function func_recent {
     ECHO     [CmdletBinding^(^)] 
     ECHO     [Alias^('recent'^)]
@@ -92,6 +93,6 @@ REM Create PowerShell profile
     ECHO     Import-Module ExchangeOnlineManagement;Connect-ExchangeOnline -Credential $Credential -ShowBanner:$false
     ECHO     iseTitle
     ECHO }
-)
+) > C:\Windows\System32\WindowsPowerShell\v1.0\profile.ps1 
 
 exit 0
