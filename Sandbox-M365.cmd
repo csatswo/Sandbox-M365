@@ -1,37 +1,32 @@
 ECHO off
-ECHO:
-ECHO:
-ECHO Downloading installation files...
-ECHO:
-ECHO off
 
+REM Download installation files
 REM Download VSCode
 curl -sS -L "https://update.code.visualstudio.com/latest/win32-x64-user/stable" --output C:\users\WDAGUtilityAccount\Downloads\vscode.exe
+REM Download Chrome
+curl -sS -L "http://dl.google.com/edgedl/chrome/install/GoogleChromeStandaloneEnterprise64.msi" --output C:\users\WDAGUtilityAccount\Downloads\GoogleChromeStandaloneEnterprise64.msi
 
-ECHO:
-ECHO Installing applications...
-ECHO:
-
-REM Install and run VSCode
+REM Install applications
+REM Install  VSCode
 C:\Users\WDAGUtilityAccount\Downloads\vscode.exe /VERYSILENT /MERGETASKS=!runcode
+REM Install Chrome
+C:\Users\WDAGUtilityAccount\Downloads\GoogleChromeStandaloneEnterprise64.msi /qn
 
-ECHO:
-ECHO Configuring PowerShell and installing modules...
-ECHO:
 
+REM Configure PowerShell and install modules
 powershell.exe "Set-ExecutionPolicy -ExecutionPolicy Unrestricted"
 powershell.exe "Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force"
 powershell.exe "Set-PSRepository -Name PSGallery -InstallationPolicy Trusted"
 powershell.exe "Update-Module"
-ECHO Installing Azure AD module...
+REM Install Azure AD module
 powershell.exe "Install-Module -Repository PSGallery -Name AzureADPreview"
-ECHO Installing MSOnline module...
+REM Install MSOnline module
 powershell.exe "Install-Module -Repository PSGallery -Name MSOnline"
-ECHO Installing Teams module...
+REM Install Teams module
 powershell.exe "Install-Module -Repository PSGallery -Name MicrosoftTeams"
-ECHO Installing Exchange Online module...
+REM Install Exchange Online module
 powershell.exe "Install-Module -Repository PSGallery -Name ExchangeOnlineManagement"
-ECHO Installing SharePoint Online module...
+REM Install SharePoint Online module
 powershell.exe "Install-Module -Repository PSGallery -Name Microsoft.Online.SharePoint.PowerShell"
 
 REM Create PowerShell profile

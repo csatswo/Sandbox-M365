@@ -1,30 +1,23 @@
 ECHO off
-ECHO:
-ECHO:
-ECHO Downloading installation files...
-ECHO:
-ECHO off
 
+REM Download installation files
 REM Download VSCode
 curl -sS -L "https://update.code.visualstudio.com/latest/win32-x64-user/stable" --output C:\users\WDAGUtilityAccount\Downloads\vscode.exe
+REM Download Chrome
+curl -sS -L "http://dl.google.com/edgedl/chrome/install/GoogleChromeStandaloneEnterprise64.msi" --output C:\users\WDAGUtilityAccount\Downloads\GoogleChromeStandaloneEnterprise64.msi
 
-ECHO:
-ECHO Installing applications...
-ECHO:
-
-REM Install and run VSCode
+REM Install applications
+REM Install  VSCode
 C:\Users\WDAGUtilityAccount\Downloads\vscode.exe /VERYSILENT /MERGETASKS=!runcode
+REM Install Chrome
+C:\Users\WDAGUtilityAccount\Downloads\GoogleChromeStandaloneEnterprise64.msi /qn
 
-ECHO:
-ECHO Configuring PowerShell and installing modules...
-ECHO:
-
+REM Configure PowerShell and install modules
 REM Install Updated PowerShell modules
 mkdir C:\Windows\System32\WindowsPowerShell\v1.0\Modules\PackageManagement
 mkdir C:\Windows\System32\WindowsPowerShell\v1.0\Modules\PowerShellGet
 xcopy C:\Users\WDAGUtilityAccount\Desktop\v1909\PackageManagement C:\Windows\System32\WindowsPowerShell\v1.0\Modules\PackageManagement /e /q>Nul
 xcopy C:\Users\WDAGUtilityAccount\Desktop\v1909\PowerShellGet C:\Windows\System32\WindowsPowerShell\v1.0\Modules\PowerShellGet /e /q>Nul
-
 powershell.exe "Set-ExecutionPolicy -ExecutionPolicy Unrestricted"
 powershell.exe "Set-PSRepository -Name PSGallery -InstallationPolicy Trusted"
 powershell.exe "Update-Module"
@@ -35,7 +28,7 @@ powershell.exe "Install-Module ExchangeOnlineManagement"
 powershell.exe "Install-Module Microsoft.Online.SharePoint.PowerShell"
 
 REM Create PowerShell profile
-> C:\Windows\System32\WindowsPowerShell\v1.0\profile.ps1 (
+(
     ECHO Function func_recent {
     ECHO     [CmdletBinding^(^)] 
     ECHO     [Alias^('recent'^)]
@@ -92,6 +85,6 @@ REM Create PowerShell profile
     ECHO     Import-Module ExchangeOnlineManagement;Connect-ExchangeOnline -Credential $Credential -ShowBanner:$false
     ECHO     iseTitle
     ECHO }
-)
+) > C:\Windows\System32\WindowsPowerShell\v1.0\profile.ps1 
 
 exit 0
