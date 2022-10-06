@@ -28,6 +28,8 @@ REM Install Exchange Online module
 powershell.exe "Install-Module -Repository PSGallery -Name ExchangeOnlineManagement"
 REM Install SharePoint Online module
 powershell.exe "Install-Module -Repository PSGallery -Name Microsoft.Online.SharePoint.PowerShell"
+REM Install BurntToast module
+powershell.exe "Install-Module -Repository PSGallery -Name BurntToast"
 
 REM Create PowerShell profile
 (
@@ -89,5 +91,7 @@ REM Create PowerShell profile
     ECHO     iseTitle
     ECHO }
 ) > C:\Windows\System32\WindowsPowerShell\v1.0\profile.ps1 
+
+powershell.exe "New-BurntToastNotification -AppLogo C:\Sandbox-M365\sandboxbox-m365.ico -Text 'Configuration Script Complete!'"
 
 exit 0
