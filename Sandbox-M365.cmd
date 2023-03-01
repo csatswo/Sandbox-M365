@@ -12,7 +12,6 @@ C:\Users\WDAGUtilityAccount\Downloads\vscode.exe /VERYSILENT /MERGETASKS=!runcod
 REM Install Chrome
 C:\Users\WDAGUtilityAccount\Downloads\GoogleChromeStandaloneEnterprise64.msi /qn
 
-
 REM Configure PowerShell and install modules
 powershell.exe "Set-ExecutionPolicy -ExecutionPolicy Unrestricted"
 powershell.exe "Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force"
@@ -28,6 +27,8 @@ REM Install Exchange Online module
 powershell.exe "Install-Module -Repository PSGallery -Name ExchangeOnlineManagement"
 REM Install SharePoint Online module
 powershell.exe "Install-Module -Repository PSGallery -Name Microsoft.Online.SharePoint.PowerShell"
+REM Install Teams Graph module
+powershell.exe "Install-Module -Repository PSGallery -Name Microsoft.Graph.Teams"
 REM Install BurntToast module
 powershell.exe "Install-Module -Repository PSGallery -Name BurntToast"
 
@@ -91,6 +92,14 @@ REM Create PowerShell profile
     ECHO     iseTitle
     ECHO }
 ) > C:\Windows\System32\WindowsPowerShell\v1.0\profile.ps1 
+
+REM Cleanup
+del "C:\Users\WDAGUtilityAccount\Downloads\GoogleChromeStandaloneEnterprise64.msi"
+del "C:\Users\WDAGUtilityAccount\Downloads\vscode.exe"
+del "C:\Users\Public\Desktop\Google Chrome.lnk"
+
+REM UI Tweaks
+reg.exe add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v TaskbarAl /t REG_DWORD /d 0 /f
 
 powershell.exe "New-BurntToastNotification -AppLogo C:\Sandbox-M365\sandboxbox-m365.ico -Text 'Configuration Script Complete!'"
 
