@@ -27,8 +27,10 @@ REM Install Exchange Online module
 powershell.exe "Install-Module -Repository PSGallery -Name ExchangeOnlineManagement"
 REM Install SharePoint Online module
 powershell.exe "Install-Module -Repository PSGallery -Name Microsoft.Online.SharePoint.PowerShell"
-REM Install Teams Graph module
+REM Install Teams Graph modules
+powershell.exe "Install-Module -Repository PSGallery -Name Microsoft.Graph.Groups"
 powershell.exe "Install-Module -Repository PSGallery -Name Microsoft.Graph.Teams"
+powershell.exe "Install-Module -Repository PSGallery -Name Microsoft.Graph.Users"
 REM Install BurntToast module
 powershell.exe "Install-Module -Repository PSGallery -Name BurntToast"
 
@@ -100,6 +102,7 @@ del "C:\Users\Public\Desktop\Google Chrome.lnk"
 
 REM UI Tweaks
 reg.exe add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v TaskbarAl /t REG_DWORD /d 0 /f
+reg.exe add "HKCU\Software\Microsoft\Windows\CurrentVersion\Search" /v SearchboxTaskbarMode /t REG_DWORD /d 1 /f
 
 powershell.exe "New-BurntToastNotification -AppLogo C:\Sandbox-M365\sandboxbox-m365.ico -Text 'Configuration Script Complete!'"
 
