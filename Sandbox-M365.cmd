@@ -95,87 +95,39 @@ REM Create PowerShell profile
     ECHO }
 ) > C:\Windows\System32\WindowsPowerShell\v1.0\profile.ps1 
 
+REM Create theme file
 (
+    ECHO ; M365Dark.theme
     ECHO [Theme]
-    ECHO ^; Windows - IDS_THEME_DISPLAYNAME_AERO_LIGHT
-    ECHO DisplayName^=BasicDark
-    ECHO ThemeId^={FF64120E-B325-4FC1-8F8F-1A193C55BAE6}
-    ECHO:
+    ECHO ; Windows - IDS_THEME_DISPLAYNAME_AERO_LIGHT
+    ECHO DisplayName^=M365Dark
+    ECHO ThemeId^={1CA7EA1C-9AD3-46A3-B823-F3BE773E8F1E}
     ECHO [Control Panel\Cursors]
-    ECHO AppStarting^=%%SystemRoot%%\cursors\wait_i.cur
-    ECHO Arrow^=%%SystemRoot%%\cursors\arrow_i.cur
-    ECHO Crosshair^=%%SystemRoot%%\cursors\cross_i.cur
-    ECHO Hand^=%%SystemRoot%%\cursors\aero_link_i.cur
-    ECHO Help^=%%SystemRoot%%\cursors\help_i.cur
-    ECHO IBeam^=%%SystemRoot%%\cursors\beam_i.cur
-    ECHO No^=%%SystemRoot%%\cursors\no_i.cur
-    ECHO NWPen^=%%SystemRoot%%\cursors\pen_i.cur
-    ECHO SizeAll^=%%SystemRoot%%\cursors\move_i.cur
-    ECHO SizeNESW^=%%SystemRoot%%\cursors\size1_i.cur
-    ECHO SizeNS^=%%SystemRoot%%\cursors\size4_i.cur
-    ECHO SizeNWSE^=%%SystemRoot%%\cursors\size2_i.cur
-    ECHO SizeWE^=%%SystemRoot%%\cursors\size3_i.cur
-    ECHO UpArrow^=%%SystemRoot%%\cursors\up_i.cur
-    ECHO Wait^=%%SystemRoot%%\cursors\busy_i.cur
     ECHO DefaultValue^=Windows Inverted
-    ECHO:
     ECHO [Control Panel\Desktop]
     ECHO Pattern^=
     ECHO MultimonBackgrounds^=0
     ECHO PicturePosition^=4
     ECHO WindowsSpotlight^=0
-    ECHO:
     ECHO [VisualStyles]
     ECHO Path^=%%SystemRoot%%\resources\themes\Aero\Aero.msstyles
     ECHO ColorStyle^=NormalColor
     ECHO Size^=NormalSize
     ECHO AutoColorization^=0
-    ECHO ColorizationColor^=0XC40078D4
+    ECHO ColorizationColor^=0XC4D73A03
     ECHO SystemMode^=Dark
     ECHO AppMode^=Light
     ECHO VisualStyleVersion^=10
-    ECHO:
     ECHO [MasterThemeSelector]
     ECHO MTSM^=RJSPBS
-    ECHO:
     ECHO [Sounds]
-    ECHO ^; IDS_SCHEME_DEFAULT
+    ECHO ; IDS_SCHEME_DEFAULT
     ECHO SchemeName^=No Sounds
-    ECHO:
     ECHO [Control Panel\Colors]
-    ECHO Scrollbar^=200 200 200
-    ECHO Background^=74 84 89
-    ECHO ActiveTitle^=153 180 209
-    ECHO InactiveTitle^=191 205 219
-    ECHO Menu^=240 240 240
-    ECHO Window^=255 255 255
-    ECHO WindowFrame^=100 100 100
-    ECHO MenuText^=0 0 0
-    ECHO WindowText^=0 0 0
-    ECHO TitleText^=0 0 0
-    ECHO ActiveBorder^=180 180 180
-    ECHO InactiveBorder^=244 247 252
-    ECHO AppWorkspace^=171 171 171
-    ECHO Hilight^=0 120 215
-    ECHO HilightText^=255 255 255
-    ECHO ButtonFace^=240 240 240
-    ECHO ButtonShadow^=160 160 160
-    ECHO GrayText^=109 109 109
-    ECHO ButtonText^=0 0 0
-    ECHO InactiveTitleText^=0 0 0
-    ECHO ButtonHilight^=255 255 255
-    ECHO ButtonDkShadow^=105 105 105
-    ECHO ButtonLight^=227 227 227
-    ECHO InfoText^=0 0 0
-    ECHO InfoWindow^=255 255 225
-    ECHO ButtonAlternateFace^=0 0 0
-    ECHO HotTrackingColor^=0 102 204
-    ECHO GradientActiveTitle^=185 209 234
-    ECHO GradientInactiveTitle^=215 228 242
-    ECHO MenuHilight^=0 120 215
-    ECHO MenuBar^=240 240 240
+    ECHO Background^=64 64 64
 ) > C:\Users\WDAGUtilityAccount\Downloads\BasicDark.theme
 
+REM Create registry tweaks file
 (
     ECHO Windows Registry Editor Version 5.00
     ECHO: 
@@ -186,6 +138,7 @@ REM Create PowerShell profile
     ECHO "SearchboxTaskbarMode"^=dword:00000001
 ) > C:\Users\WDAGUtilityAccount\Downloads\UITweaks.reg
 
+REM Create Start layout xml
 (
     ECHO ^<?xml version^="1.0" encoding^="utf-8"?^>
     ECHO ^<LayoutModificationTemplate
