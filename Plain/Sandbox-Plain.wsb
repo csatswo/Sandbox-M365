@@ -1,7 +1,7 @@
 <Configuration>
 <MappedFolders>
    <MappedFolder>
-     <HostFolder>C:\Users\tehst\OneDrive\Documents\Sandbox\Plain</HostFolder>
+     <HostFolder>%PathToFolder%\Sandbox-M365\Plain</HostFolder>
      <SandboxFolder>C:\Sandbox</SandboxFolder> 
      <ReadOnly>true</ReadOnly>
    </MappedFolder>

@@ -2,11 +2,11 @@
 <MappedFolders>
    <MappedFolder>
      <HostFolder>%PathToFolder%\Sandbox-M365</HostFolder>
-     <SandboxFolder>C:\Sandbox-M365</SandboxFolder> 
+     <SandboxFolder>C:\Sandbox</SandboxFolder> 
      <ReadOnly>true</ReadOnly>
    </MappedFolder>
 </MappedFolders>
 <LogonCommand>
-   <Command>C:\Sandbox-M365\Sandbox-M365.cmd</Command>
+   <Command>C:\Sandbox\Sandbox-M365.cmd</Command>
 </LogonCommand>
 </Configuration>
